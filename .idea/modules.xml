@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/BootDemo.iml" filepath="$PROJECT_DIR$/BootDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/aloogn-boot-config/aloogn-config.iml" filepath="$PROJECT_DIR$/aloogn-boot-config/aloogn-config.iml" />
+    </modules>
+  </component>
+</project>
