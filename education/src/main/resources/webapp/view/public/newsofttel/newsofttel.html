@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Frameset//EN" 
+"http://www.w3.org/TR/html4/frameset.dtd">
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>软电话</title>
+<style type="text/css">
+div{
+	float: left;
+}
+</style>
+<link rel=stylesheet type=text/css href="./huawei/css/default.css">
+<script src="./huawei/json2.js"></script>
+<script src="./huawei/cafcore.js"></script>
+<script src="./huawei/huawei.js"></script>
+<script src="./huawei/softphone.js"></script>
+<script src="./huawei/util.js"></script>
+<script type="text/javascript" src="./jquery-easyui-1.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="./jquery-easyui-1.5.1/jquery.easyui.min.js"></script>
+</head>
+
+
+<script type="text/javascript">
+function getParameter(param){//-----------------------------------获取URL参数
+	var query = window.location.search;
+	var iLen = param.length;
+	var iStart = query.indexOf(param);
+	if (iStart == -1)
+		return "";
+	iStart += iLen + 1;
+	var iEnd = query.indexOf("&",iStart);
+	if (iEnd == -1)
+		return query.substring(iStart);
+	return query.substring(iStart,iEnd);
+}
+function registFun(){
+	var agentId = document.getElementById('agtId');
+	if(agentId && agentId.innerHTML!=""){
+		alert("请勿重复注册");
+		return;
+	}
+	var agentId = getParameter('ext');
+	var ctiIp = getParameter('ctiIp');
+	var ctiPort = getParameter('ctiPort');
+	var serverIp = getParameter('serverIp');
+	var serverPort = getParameter('serverPort');
+	var before = getParameter('before');
+	initCAF1(ctiIp,ctiPort,agentId,serverIp,serverPort,before);
+}
+function initCAF1(ctiIp,ctiPort,agentId,serverIp,serverPort,before){
+	//CTI服务器I地址、CTI服务器端口、外呼人员分机、流水服务器地址、流水服务器端口
+	init1(ctiIp,ctiPort,agentId,serverIp,serverPort,before);
+}
+function initCAF(ctiIp,ctiPort,agentId,serverIp,serverPort,before){
+	//CTI服务器I地址、CTI服务器端口、外呼人员分机、流水服务器地址、流水服务器端口
+	init(ctiIp,ctiPort,agentId,serverIp,serverPort,before);
+}
+function addAndDail1(num){
+	addAndDail(num);
+	//查询拨打电话的时候需要在电话号码之前加前缀区分电话从哪里呼出
+// 	$http.post(NewCoreUrl, {"channelNo": "1", "transCode": "BusinessParamQuery","bizTypePropCode":"OUT_CALL_TEL_TYPE"}).success(function (res) {
+//         if (res.returnMsg == "OK") {
+//         	num = res.bizTypePropValue+num;
+//         	addAndDail(num);
+//         }else{
+//           addAndDail(num);
+//         }
+//      });
+	
+}
+$(document).ready(function(){
+	initApplet();
+});
+function initApplet(){
+	var loadPath = "";
+	var productUrl = window.location.protocol + "//" + window.location.host;
+    if(productUrl.indexOf("eaasmanu.cqrcb.com") != -1){
+    	loadPath = " codebase=\""+productUrl+"/HWDemo/\" ";
+    }else{
+    	loadPath = " codebase=\""+productUrl+"/approve/view/public/newsofttel/\" ";
+    }
+	document.getElementById('bodyId').innerHTML = document.getElementById('bodyId').innerHTML + "<applet alt=\"Java isn't installed or doesn't work\" name=\"Pactera VTA Applet\" "
+		+" archive=\"huawei/jar/caf.jar\" "
+		+ loadPath
+		+" code=\"com.pactera.caf.core.CAF\" scriptable=\"true\" "
+		+ " mayscript=\"true\" permissions=\"all-permissions\" height=\"0\" width=\"0\" log=\"caf\"> </applet>" ; 
+}
+function destroyTel(){
+	//为了配合新旧平台切换，容错处理，此方法在新平台的软电话不做任何操作
+}
+</script>
+<body style="border:0px solid white;width:100%;height:100%;" id="bodyId">
+	<input type="hidden" id="callid" value=""/>
+	
+	<table	style="width: 100%; height: 60px; background: url('./images/logobg.jpg') repeat-x left -18px;"
+			border=0 cellSpacing=0 cellPadding=0>
+			<tr>
+				<td>
+				<label style="font-size:18px; ">AgentID:</label><label id="agtId" style="font-size:18px; "></label>
+				</td>
+				<td>
+				<label style="font-size:18px; ">状态:</label><label id="status" style="font-size:18px; "></label>
+				</td>
+			</tr>
+			<tr>
+				<td class="logotabletd" valign="top" width="140">
+					<div class="phoneNumber">
+						<input class="phoneNumber_input" id=PhoneNumber>
+					</div>
+				</td>
+			<td class=logotabletd valign="top"
+				style="padding-top: 11px; padding-left: 2px;">
+			<input type="button"  id="logindiv" value="签入"
+					onClick="login();" class="teleFree"
+					style="padding-left: 35px; width: 60px;" onmousedown="mouseDownEvent(this)" onmouseup="mouseOutEvent(this)"/>
+			<input type="button"  id="daildiv" value="外呼"  
+					onClick="dail();" class="teleDial"
+					style="padding-left: 35px; width: 60px;display: none;" onmousedown="mouseDownEvent(this)" onmouseup="mouseOutEvent(this)"/>
+			<input type="button"  id="logoutdiv" value="签出" 
+					onClick="logout();" class="teleLogout"
+					style="padding-left: 35px; width: 60px;display: none;" onmousedown="mouseDownEvent(this)" onmouseup="mouseOutEvent(this)"/>
+			<input type="button"  id="holddiv" value="保持"
+					onClick="hold();" class="teleHold"
+					style="padding-left: 35px; width: 60px;display: none;" onmousedown="mouseDownEvent(this)" onmouseup="mouseOutEvent(this)"/>
+			<input type="button"  id="holdbackdiv" value="接回"
+					onClick="holdback();" class="teleHoldBack"
+					style="padding-left: 35px; width: 60px;display: none" onmousedown="mouseDownEvent(this)" onmouseup="mouseOutEvent(this)"/>
+			<input type="button"  id="hangupdiv" value="挂机"
+					onClick="callend();" class="teleHangUp"
+					style="padding-left: 35px; width: 60px;display: none" onmousedown="mouseDownEvent(this)" onmouseup="mouseOutEvent(this)"/>
+				</td>
+						
+		</tr>
+		
+	</table>
+	<!-- <table>
+		<tr>
+			<td><button onclick="alert(getAcallId())" />点我获取呼叫id</td>
+			<td><button onclick="alert(getVoicePath())" /> 点我获取录音地址</td>
+			<td><button onclick="addAndDail('7002')"  /> 点我添加号码并拨打电话</td>
+			<td><button onclick="alert(getStatus())" /> 点我获取座席状态 0签出 1签入 2通话 3保持 4话后处理 5外呼中</td>
+		
+		</tr>
+	</table> -->
+</body>
+</html>
+
+
+
+
+
+
+
+

@@ -1,0 +1,42 @@
+<aside class="aside">
+	<div class="aside-inner">
+		<nav class="sidebar">
+			<div class="has-user-block">
+				<div id="user-block" class="collapse in">
+					<div class="item user-block">
+						<!-- User picture-->
+						<div class="user-block-picture">
+							<div class="user-block-status">
+								<img src="img/user/10.jpg" alt="Avatar" width="60" height="60"
+									class="img-thumbnail img-circle">
+								<div class="circle circle-success circle-lg"></div>
+							</div>
+						</div>
+						<!-- Name and Job-->
+						<div class="user-block-info">
+							<span class="user-block-name">你好,
+								{{LoginList.employeeName}}</span> <span class="user-block-role">{{LoginList.positionName}}</span>
+						</div>
+					</div>
+				</div>
+			</div>
+			<ul class="nav height_menu" id="accordion">
+				<li class="nav-heading"><span>主菜单</span></li>
+				<li class=" " ng-repeat="menu in menuList" ng-init="index=$index" ng-class="{true: 'activea', false: 'inactivea'}[isActive]"> 
+					<a data-target="#elements{{$index}}" data-toggle="collapse" class="two" >
+						<em class="fa fa-folder-open-o"></em>
+						<span>{{menu.funName}}</span>
+						<i class="fa fa-angle-right pull-right" ng-if="myVar"></i> 
+					</a>
+					<ul id="elements{{$index}}" class="nav sidebar-subnav collapse">
+						<li class="active_2" ng-repeat="a in menuList[$index].list"> 
+							<a  class="active_menu"  href='{{a.funUrl}}'> 
+								<span >{{a.funName}}</span>
+							</a >
+						</li>
+					</ul>
+				</li>
+			</ul>
+		</nav>
+	</div>
+</aside>

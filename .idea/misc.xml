@@ -6,6 +6,20 @@
         <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/aloogn-boot-config/pom.xml" />
+        <option value="$PROJECT_DIR$/aloogn-boot-log/pom.xml" />
+        <option value="$PROJECT_DIR$/com-alogn-config/pom.xml" />
+        <option value="$PROJECT_DIR$/education-config/pom.xml" />
+        <option value="$PROJECT_DIR$/education-entity/pom.xml" />
+        <option value="$PROJECT_DIR$/education-log/pom.xml" />
+        <option value="$PROJECT_DIR$/education-mapper/pom.xml" />
+        <option value="$PROJECT_DIR$/education-service/pom.xml" />
+        <option value="$PROJECT_DIR$/education-test/pom.xml" />
+        <option value="$PROJECT_DIR$/education-utils/pom.xml" />
+      </set>
+    </option>
   </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />

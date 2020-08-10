@@ -3,7 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BootDemo.iml" filepath="$PROJECT_DIR$/BootDemo.iml" />
-      <module fileurl="file://$PROJECT_DIR$/aloogn-boot-config/aloogn-config.iml" filepath="$PROJECT_DIR$/aloogn-boot-config/aloogn-config.iml" />
+      <module fileurl="file://$PROJECT_DIR$/education/education.iml" filepath="$PROJECT_DIR$/education/education.iml" />
+      <module fileurl="file://$PROJECT_DIR$/rabbitmq/rabbitmq.iml" filepath="$PROJECT_DIR$/rabbitmq/rabbitmq.iml" />
     </modules>
   </component>
 </project>

@@ -1,0 +1,11 @@
+<div class="right_container" id="breadcrumb-box" ng-class="{true: 'switct_contenr_right', false: ''}[switchStyle]" ng-show="wCru">
+	<div class="container">
+		<div class=" detail_breadcrumb">
+		       <ul class="breadcrumb pt10 pull-left font14 col-xs-12">
+		             <li ng-click="homeCru()" ><a><i class="iconfont">&#xe617;</i> 首页</a></li>
+		             <li ng-show="wCru"><a>{{parentCru}}</a></li>
+		             <li ng-show="wCru" class="active"><a>{{childCru}}</a></li>
+		      </ul>
+		</div>
+	</div>
+</div>

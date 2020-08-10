@@ -1,0 +1,614 @@
+@import url("messages.css");
+
+div.standardsNote {
+    display: none;
+}
+
+/*
+ * File Name:         common.css
+ * Company:           Pactera
+ * Author:            
+ * Date:              2013-03-11
+ * Last Modified:     
+ * Comment:           通用样式文件
+*/
+/*主框体样式：边距、字体、字体大小、字体颜色*/
+body{
+	margin:0 0 0 0;
+	font-family:"宋体","Arial";
+	font-size:12px;
+	color:#000;
+	height:100%;
+	text-align:center;
+}
+/*所有表格样式：字体、字体大小、字体颜色*/
+table{
+	font-family:"宋体","Arial";
+	font-size:12px;
+	color:#000;
+}
+/*主工作区外层表格样式：宽度、高度、边框*/
+.mainworktable{
+	width:100%;
+	border-bottom:none;
+	border-top:none;
+	text-align:center;
+}
+.navtable{
+	width:100%;
+	height:27px;
+}
+.maintable{
+	text-align:center;
+	width:100%;
+	height:100%;
+}
+/*主工作区外层左中单元格样式：宽度、高度*/
+.maintablelmtd{
+	width:4px;
+	height:100%;
+}
+/*主工作区外层中中单元格(内层表格)样式：宽度、高度、背景*/
+.maintablemmtd{
+	width:100%;
+	height:100%;
+	text-align:center;
+	padding-top:4px;
+}
+/*主工作区外层上中单元格样式：宽度、高度*/
+.maintabletmtd{
+	width:100%;
+	height:27px;
+}
+/*主工作区外层下中单元格样式：宽度、高度*/
+.maintablebmtd{
+	width:100%;
+	height:27px;
+}
+/*主工作区功能名称表格样式：高度、对齐方式、字体*/
+.functitletable{
+	height:25px;
+	float:left;
+	font-weight:bold;
+	color:#fff;
+	font-size:13px;
+	padding-left:5px;
+}
+/*主工作区功能按钮表格样式：高度、对齐方式*/
+.funcbuttontable{
+	height:25px;
+	float:right;
+}
+/*主工作区内容表格样式：宽度、边框、背景、行高*/
+.contenttable1{
+	border:1px solid #bcbcbc;
+	background:#DCE5F2;
+	/*background:#DCE6EB;*/
+	border-right:none;
+	border-top:none;	
+	line-height:20px;
+	margin-bottom:4px;	
+}
+/*主工作区内容表格单元格样式：边框*/
+.contenttable1 td{
+	border:1px solid #bcbcbc;
+	border-left:none;
+	border-bottom:none;
+	padding-left:1px;
+}
+/*主工作区内容表格标题样式：高度、背景、字体、左边距*/
+.contenttabletitle{
+	background-color:#f2f2f4
+	font-size:13px;
+	font-weight:bold;
+	color:#666;
+	height:25px;
+	padding-left:2px;
+	text-align:center;
+}
+/*主工作区内容标题样式：背景*/
+.contenttitle{
+	background-color:#FFFFFF;
+	color:#2E567E;
+	
+}
+.listtable{
+	border:1px solid #7AC0DE;
+	background:#DCE5F2;
+	border-top:none;	
+	line-height:20px;
+	margin-bottom:4px;
+	text-align:center;
+	width:98%;	
+}
+.listtable td{
+	border-top:1px solid #7AC0DE;
+}
+.listtitle{
+	background:#B0DAEA;
+	color:#000;
+	height:25px;
+}
+.searchtable{
+	background:#EBEBEB;
+	margin-bottom:4px;
+	border:1px solid #999;
+}
+.insidetable{
+	line-height:30px;
+}
+.longinput{
+    height:20px;
+	width:300px;
+    margin-left:2px;
+}
+.midlonginput{
+    height:20px;
+	width:240px;
+    margin-left:2px;
+}
+.midinput{
+    height:20px;
+	width:180px;
+    margin-left:2px;
+}
+.veryshortinput{
+    height:20px;
+	width:80px;
+    margin-left:2px;
+}
+.veryshortinputForCredt{
+    height:20px;
+	width:40px;
+    margin-left:2px;
+}
+.shortinputForCreCustomer{
+    height:20px;
+	width:135px;
+    margin-left:2px;
+}
+.shortinput{
+    height:20px;
+	width:100px;
+    margin-left:2px;
+}
+.longerinput{
+    height:20px;
+	width:500px;
+    margin-left:2px;
+}
+.cardlisttitlebg{
+	background-color:#e8e9e9;
+}
+.cardlisttable td{
+	border-bottom:#ABC6E7 1px solid;
+	border-right:#ABC6E7 1px solid;
+	white-space: nowrap;
+	vertical-align:bottom;
+}
+.buttonfunctioni{
+	background:url("/images/core/ivrbutton.jpg") no-repeat;
+	width:72px;
+	height:19px;
+	border:none;
+	margin-bottom:4px;
+}
+.labelbutton{
+	background:url(../images/core/lab1.jpg) no-repeat;
+	width:86px;
+	height:28px;
+	border:none;
+	margin-right:4px;
+	padding-left:3px;
+}
+.labelbutton1{
+	background:url(../images/core/lab2.jpg) no-repeat;
+	width:86px;
+	height:28px;
+	border:none;
+	margin-right:4px;
+	padding-left:3px;
+}
+.buttonfunction{
+	background:url("/images/core/button2.jpg") no-repeat;
+	width:49px;
+	height:20px;
+	border:none;
+	color:#fff;
+	font-size:12px;
+}
+.longbuttonfunction{
+	background:url("/images/core/button4.jpg") no-repeat;
+	width:70px;
+	height:20px;
+	border:none;
+	color:#fff;
+	font-size:12px;
+}
+.redlongbuttonfunction{
+	background:url("/images/core/button8.jpg") no-repeat;
+	width:70px;
+	height:20px;
+	border:none;
+	color:#fff;
+	font-size:12px;
+}
+.longerbuttonfunction{
+	background:url("/images/core/button6.jpg") no-repeat;
+	width:87px;
+	height:20px;
+	border:none;
+	color:#fff;
+	font-size:12px;
+}
+.insidetitle{
+	font-weight:bold;
+	text-align:right;
+}
+.warntext {
+	font-family: "宋体";
+	font-size: 14px;
+	font-weight: bold;
+	color: #000000;
+}
+.remindtext1{
+	font-family: "宋体";
+	font-size: 14px;
+	color:#990000;
+	padding:4px;
+}
+.workremind3{
+	font-family: "宋体";
+	font-size: 12px;
+	color:#000;
+	padding:4px;
+	background:#C6DBED;
+	border:#BBD0D8 1px solid;
+
+}
+.workremindtable{
+	margin-bottom:4px;
+	padding-right:4px;
+	width:99%;
+	height:26px;
+}
+
+/*设置最长的下拉菜单*/
+.selecttoolong{
+    width:200px;
+    height:20px;
+    margin-left:3px;
+}
+/*设置中等长度的下拉菜单*/
+.selectmiddle{
+    width:180px;
+    height:20px;
+    margin-left:2px;
+}
+/*设置文本框同等长度下拉菜单*/
+.selectaffist{
+    width:150px;
+    height:20px;
+    margin-left:2px;
+}
+/*设置较短的下拉菜单*/
+.selectshort{
+    width:110px;
+    height:20px;
+    margin-left:3px;
+}
+/*设置最短的下拉菜单*/
+.selectveryshort{
+    width:80px;
+    height:20px;
+    margin-left:3px;
+}
+.mselectmiddle{
+    width:180px;
+    margin-left:2px;
+}
+.topbar{
+	font-size:14px;
+	font-weight:bold;
+	color:#000;
+	padding-left:8px;
+	padding-top:5px;
+
+}
+fieldset.pickList {
+    margin-top: 5px;
+    padding: 5px;
+    background: transparent;
+    border-color: #eee;
+}
+fieldset.pickList legend {
+    font-weight: bold;    
+}
+table.pickList {
+    padding: 0;
+    border-spacing: 0;
+}
+table.pickList th.pickLabel {
+    text-align: center;
+    background: transparent;
+    color: #666;
+}
+table.pickList td {
+    text-align: center;
+    vertical-align: middle;
+}
+table.pickList td label {
+    vertical-align: middle;
+}
+table.pickList td input {
+    vertical-align: middle;
+}
+table.pickList td select {
+    width: 340px;
+}
+.inputtable{
+	border:1px solid #7AC0DE;
+	background:#DCE5F2;
+	line-height:25px;
+	padding:5px 5px 5px 5px;
+}
+.textareal{
+	width:150px;
+	height:200px;
+}
+.phoneNumber{
+	padding-top:5px;
+	margin-top:12px;
+	height: 30px;
+	width: 150px;
+	padding-left:5px;
+	padding-right:5px;
+	background: url(../../images/PhoneNumber.gif) no-repeat left top transparent;
+}
+.phoneNumber_input{
+	font-size:25px;
+	margin-top:-5px;
+	border:none;
+	height: 30px;
+	width: 120px;
+	color:#214090;
+	font-family:Haettenschweiler;
+	letter-spacing:1px;
+	background:transparent;
+}
+.teleFree{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../../images/teleLogin1.gif) no-repeat left top transparent;
+}
+.teleFree1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleFree3.gif) no-repeat left top transparent;
+}
+.teleBusy{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleBusy1.gif) no-repeat left top transparent;
+}
+.teleBusy1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleBusy3.gif) no-repeat left top transparent;
+}
+.tmpLogout{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/tmpLogout1.gif) no-repeat left top transparent;
+}
+.tmpLogout1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/tmpLogout3.gif) no-repeat left top transparent;
+}
+.teleLogin{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleLogin1.gif) no-repeat left top transparent;
+}
+
+.teleConference{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/conference1.gif) no-repeat left top transparent;
+}
+
+.teleConference1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/conference3.gif) no-repeat left top transparent;
+}
+
+.teleSleep{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/sleep1.gif) no-repeat left top transparent;
+}
+
+.teleSleep1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/sleep3.gif) no-repeat left top transparent;
+}
+
+.teleLogin1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleLogin3.gif) no-repeat left top transparent;
+}
+.teleLogout{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../../images/teleLogout1.gif) no-repeat left top transparent;
+}
+.teleLogout1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleLogout3.gif) no-repeat left top transparent;
+}
+.teleDial{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../../images/teleDial1.gif) no-repeat left top transparent;
+}
+.teleDial1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleDial3.gif) no-repeat left top transparent;
+}
+.teleAnswer{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleAnswer1.gif) no-repeat left top transparent;
+}
+.teleAnswer1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleAnswer3.gif) no-repeat left top transparent;
+}
+.teleHangUp{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../../images/teleHangUp1.gif) no-repeat left top transparent;
+}
+.teleHangUp1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleHangUp3.gif) no-repeat left top transparent;
+}
+.teleHold{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../../images/teleHold1.gif) no-repeat left top transparent;
+}
+.teleHold1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleHold3.gif) no-repeat left top transparent;
+}
+.teleObserve{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/tmpLogout.gif) no-repeat left top transparent;
+}
+.teleHoldBack{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../../images/teleHoldBack1.gif) no-repeat left top transparent;
+}
+.teleHoldBack1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleHoldBack3.gif) no-repeat left top transparent;
+}
+.switching{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/switching1.gif) no-repeat left top transparent;
+}
+.switching1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/switching3.gif) no-repeat left top transparent;
+}
+.switching_light{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/switching1.gif) no-repeat left top transparent;
+}
+.switching_gray{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/switching_gray.gif) no-repeat left top transparent;
+}
+.finish{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleFinish.gif) no-repeat left top transparent;
+}
+.finish1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleFinish1.gif) no-repeat left top transparent;
+}
+.cancel{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleCancel.gif) no-repeat left top transparent;
+}
+.cancel1{
+	border:none;
+	cursor:pointer;
+	padding-top:3px;
+	height: 32px;
+	background: url(../images/teleCancel1.gif) no-repeat left top transparent;
+}

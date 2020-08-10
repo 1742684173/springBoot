@@ -1,0 +1,72 @@
+<div class="header" id="nav-header-box">
+	<div class="header_top">
+		<div class="container header-container">
+			<div class="logo">
+				<!-- <img src="img/logo.png" /> -->
+			</div>
+			<ul class="header_text pull-right">
+				<li>
+					欢迎你，{{login_Id}}
+				</li>
+				<li>
+					<a ng-click='amendPassword()' class="white pl10 pr10">修改密码
+					</a>
+				</li>
+				<li>
+					<a ng-click='loginOut()' class="white pl10 pr10">退出
+						<em class="fa fa-sign-out"></em>
+					</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="contenr_menu navbar">
+	<div class="container navbar-inner">
+		<ul class="nav">
+			<li ng-click="currentIndex = -1"
+				ng-class="{true:'active',false:''}[currentIndex == -1]">
+
+				<a ng-class="{true:'active',false:'inactive'}[currentIndex == -1]"
+				   ng-mouseenter="currentIndex = -1"
+				   ng-mouseleave="currentIndex = -99"
+				   ng-click="homeCru()"
+				   ui-sref='.welcome'
+				   ui-sref-opts="{reload:true}" >
+					<span>首页</span>
+				</a>
+			</li>
+
+			<li class="dropdown"
+				ng-class="{true:'active',false:''}[currentIndex == $index]"
+				ng-repeat="menu in menuList">
+
+				<a  ng-class="{true:'active',false:'inactive'}[currentIndex == $index]"
+					ng-mouseenter="currentIndex = $index"
+					ng-mouseleave="currentIndex = -99">
+
+<!--					<em class="fa fa-file-o "></em>-->
+					<span>{{menu.funDisplayName}}</span>
+<!--					<em class='fa fa-dot-circle-o activeicon'></em>-->
+<!--					<i class=""></i>-->
+				</a>
+
+				<ul class="dropdown-menu"
+					ng-mouseenter="currentIndex = $index"
+					ng-mouseleave="currentIndex = -99"
+					ng-class="{true:'active',false:'inactive'}[currentIndex == $index]"
+					style="margin-top: 0;">
+
+					<li ng-click="chooseCru(this)" ng-repeat="a in menuList[$index].childMenuList">
+						<a class="active_menu"
+						   ui-sref='{{a.funUrl?a.funUrl:".noPage"}}'
+						   ui-sref-opts="{reload:true}"
+						   ng-click='switchTwo(this)'>
+							<span>{{a.funDisplayName}}</span>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>

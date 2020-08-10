@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>软电话</title>
+<!-- 引入平台SP插件 -->
+	<object id="softphone" classid='clsid:b2a8d481-e977-4a71-83b2-8aff70c829bb' width="0" height="0"  codebase="SP.CAB"></object>
+    <object id="socketObj" width="0" height="0" ></object>
+    <!-- 引用JS文件 -->
+    <script language="javascript" src="tools/outcall/SoftPhone.js"></script>
+	<script language="javascript" src="tools/outcall/OutCallEvent.js"></script>
+	<!-- 添加响应事件 -->
+	<script language="javascript" for="softphone" event="OnConnected()" >Event_OnConnected()</script>
+	<script language="javascript" for="softphone" event="OnDisconnected()">Event_OnDisconnected()</script>
+	<script language="javascript" for="softphone" event="OnLoggedIn()">Event_OnLoggedIn()</script>
+	<script language="javascript" for="softphone" event="OnLoggedOut()">Event_OnLoggedOut()</script>
+	<script language="javascript" for="softphone" event="OnDialing(msg)">Event_OnDialing(msg),changeDailFlag()</script>
+	<script language="javascript" for="softphone" event="OnEstablished(msg)">Event_OnEstablished(msg)</script>
+	<script language="javascript" for="softphone" event="OnReleased(msg)">Event_OnReleased(msg),cleanPhone()</script>
+	<script language="javascript" for="softphone" event="OnHold()">Event_OnHold()</script>
+	<script language="javascript" for="softphone" event="OnUnHold()">Event_OnUnHold()</script>
+	<script language="javascript" for="softphone" event="OnError(msg)">Event_OnError(msg)</script>
+	<!-- 定义CTI连接 -->
+	
+	<style>
+		/*软电话样式*/
+		.soft-tel-box{
+			position:fixed;
+			left:0;
+			bottom:0px;
+			background-color:#ebebebe;
+			z-index:100;
+			height:70px;
+		}
+		.left-arrow-box{
+			float:left;
+			padding:5px;
+			cursor: pointer;
+			color: #06c0ab;
+		}
+		.left-arrow-box .iconfont{
+			font-size:26px;
+		}
+		.right-show{
+			float:left;
+			width:400px;
+			background-color:#cdcdcd;
+		}
+		/*软电话样式---end*/
+	</style>
+</head>
+<body onunload="destroy()"  style="margin: 0 0 0 0;" > <!-- onload="regist('6102','','9','')" -->
+	<!-- 引入控件 -->
+	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="100%" height="70px" id="OutCall" >
+	     <param name="movie" value="tools/outcall/OutCall.swf" />
+	     <param name="quality" value="high" />
+	     <param name="bgcolor" value="#ffffff" />
+	     <param name="allowScriptAccess" value="always" />
+	     <param name="allowFullScreen" value="true" />
+	     <param name="allowNetworking" value="all" />
+	     <object type="application/x-shockwave-flash" data="tools/outcall/OutCall.swf" width="100%" height="100%">
+	         <param name="quality" value="high" />
+	         <param name="bgcolor" value="#ffffff" />
+	         <param name="allowScriptAccess" value="always" />
+	         <param name="allowNetworking" value="all" />
+	         <param name="allowFullScreen" value="true" />
+	     </object>
+	</object>
+	
+	<script>
+	/*******************************UAT环境 *******************************/
+	var serverName = getParameter('serverName');
+	
+	softphone.ServerName = serverName;
+	softphone.UserDomain = getParameter('userDomain');
+	softphone.AuthenticateIP = serverName;
+	softphone.CCMAIP = serverName;
+	softphone.CCMSIP = serverName;
+	softphone.CCMMIP = serverName;
+	softphone.LMURL = getParameter('lmurl');
+	
+	socketObj.host = getParameter('softTelHost');
+	socketObj.port = getParameter('softTelPort');
+	
+	var isDail = false;
+	function addAndDail1(num){
+		addAndDail(num);
+		return isDail;
+	}
+	function changeDailFlag(){
+		isDail = true;
+	}
+	function cleanPhone(){
+		addPhoneNum("");
+	}
+	function destroyTel(){
+		destroy();
+	}
+	function getParameter(param){//-----------------------------------获取URL参数
+		var query = window.location.search;
+		var iLen = param.length;
+		var iStart = query.indexOf(param);
+		if (iStart == -1)
+			return "";
+		iStart += iLen + 1;
+		var iEnd = query.indexOf("&",iStart);
+		if (iEnd == -1)
+			return query.substring(iStart);
+		return query.substring(iStart,iEnd);
+	}
+	function registFun(){
+		var ext = getParameter('ext');
+		var softTelHost = getParameter('softTelHost');
+		var softTelPort = getParameter('softTelPort');
+		regist(ext,'','9','',softTelHost,softTelPort); 
+	}
+	/* registFun(); */
+	function registBtn(){
+		regist('6102','','9','',"10.181.68.180","8181");
+	}
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+	

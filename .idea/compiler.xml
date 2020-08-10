@@ -7,13 +7,45 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="aloogn-config" />
-        <module name="BootDemo" />
+        <module name="rabbitmq" />
+        <module name="education" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="aloogn-boot-config" target="1.8" />
+      <module name="aloogn-boot-log" target="1.8" />
       <module name="aloogn-config" target="1.8" />
       <module name="BootDemo" target="1.8" />
+      <module name="com-alogn-config" target="1.8" />
+      <module name="education" target="1.8" />
+      <module name="education-config" target="1.8" />
+      <module name="education-entity" target="1.8" />
+      <module name="education-log" target="1.8" />
+      <module name="education-mapper" target="1.8" />
+      <module name="education-redis" target="1.8" />
+      <module name="education-service" target="1.8" />
+      <module name="education-test" target="1.8" />
+      <module name="education-utils" target="1.8" />
+      <module name="rabbitmq" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="BootDemo" options="-parameters" />
+      <module name="aloogn-boot-config" options="-parameters" />
+      <module name="aloogn-boot-log" options="-parameters" />
+      <module name="aloogn-config" options="-parameters" />
+      <module name="com-alogn-config" options="-parameters" />
+      <module name="education" options="-parameters" />
+      <module name="education-config" options="-parameters" />
+      <module name="education-entity" options="-parameters" />
+      <module name="education-log" options="-parameters" />
+      <module name="education-mapper" options="-parameters" />
+      <module name="education-redis" options="-parameters" />
+      <module name="education-service" options="-parameters" />
+      <module name="education-test" options="-parameters" />
+      <module name="education-utils" options="-parameters" />
+      <module name="rabbitmq" options="-parameters" />
+    </option>
   </component>
 </project>
